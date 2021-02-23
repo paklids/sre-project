@@ -1,0 +1,22 @@
+version: "3"
+services:
+  app:
+    container_name: app
+    build:
+      context: ./golang
+      dockerfile: Dockerfile-test
+    environment:
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+    command: ./go_binary
+    networks:
+      - backend
+
+  redis:
+    container_name: redis
+    image: redis:latest
+    networks:
+      - backend
+
+networks:
+  backend:

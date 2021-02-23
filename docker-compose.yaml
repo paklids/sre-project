@@ -1,0 +1,21 @@
+version: "3"
+services:
+  app:
+    container_name: app
+    build:
+      context: ./golang
+      dockerfile: Dockerfile
+    command: ./go_binary
+    ports:
+      - "9001:9001"
+    networks:
+      - backend
+
+  redis:
+    container_name: redis
+    image: redis:latest
+    networks:
+      - backend
+
+networks:
+  backend:
