@@ -5,8 +5,10 @@ RUN set -ex; \
     apk update; \
     apk add --no-cache git
 WORKDIR /src
-COPY src /src
+COPY test /src
 RUN go get gopkg.in/redis.v4
+## when unit tests are written then those could be added here
+## RUN go test ...
 RUN go build -o /out/go_binary .
 
 ## final container where binaries live

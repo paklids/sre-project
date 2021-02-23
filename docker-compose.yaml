@@ -5,6 +5,10 @@ services:
     build:
       context: ./golang
       dockerfile: Dockerfile
+    environment:
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      CONTENT_STRING: "Hello There Friend"
     command: ./go_binary
     ports:
       - "9001:9001"
