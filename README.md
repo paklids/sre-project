@@ -4,14 +4,18 @@ An example of a webserver frontend with a Redis backend
 
 Code and configuration files may have verbose comments to explain what happens at each step
 
-This project should work on linux or MacOS (and perhaps Windows if setup properly)
+This project was developed on MacOS and confirmed to work on Ubuntu Linux v20.04. It is possible
+it would work on Windows if setup properly.
 
 ## Prerequisites
 
-- `docker` must be installed
-- `docker-compose` must be installed
+- `docker` must be installed ( https://docs.docker.com/get-docker/ )
+- `docker-compose` must be installed ( https://docs.docker.com/compose/install/ )
 - `make` must be usable at the command line
 - `go` can be instlled but is not required (can run entirely within containers)
+
+It is recommended that whatever user runs this be added to the Docker user group permissions
+( )
 
 ## How does it work?
 
@@ -22,6 +26,8 @@ open a web browser (or curl) to query http://localhost:9001 and see the Content 
 the docker-compose.
 
 ## Usage
+
+To see what happens with each command, see the `Makefile`
 
 ```
 make test
@@ -52,3 +58,4 @@ make clean-dock
 ```
 
 Cleans out all the container images that were generated each time changes were made.
+If containers are in use it may be necessary to add `--force` to the underlying commands used.
