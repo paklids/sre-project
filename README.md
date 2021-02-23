@@ -12,10 +12,10 @@ it would work on Windows if setup properly.
 - `docker` must be installed ( https://docs.docker.com/get-docker/ )
 - `docker-compose` must be installed ( https://docs.docker.com/compose/install/ )
 - `make` must be usable at the command line
-- `go` can be instlled but is not required (can run entirely within containers)
+- `go` can be installed but is not required (can run entirely within containers)
 
 It is recommended that whatever user runs this be added to the Docker user group permissions
-( )
+( for example: On Ubuntu linux see `usermod` here https://docs.docker.com/engine/install/ubuntu/ )
 
 ## How does it work?
 
